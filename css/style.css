@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  --white: #fff;
+  --light: #dfe6e9;
+  --gray: #b2bec3;
+  --dark: #2d3436;
+  --night: #353b48;
+  --black: #1e272e;
+  --light-blue: #1890ff;
+  --light-green: #0be881;
+  --light-yellow: #ffcf00;
+  --light-red: #ff4e4f;
+}
+
+:root.dark {
+  --black: #fff;
+  --dark: #dfe6e9;
+  --light: #2d3436;
+  --white: #1e272e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.counter-box {
+  width: 600px;
+  height: 400px;
+  background-color: var(--white);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding: 10px 15px;
+  overflow: hidden;
+}
+
+.counter-box__navbar {
+  width: 100%;
+}
+
+.counter-box__navbar__menu {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.counter-box__navbar__menu__logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--dark);
+}
+
+.counter-box__navbar__menu__item {
+  list-style-type: none;
+}
+
+.counter-box__navbar__menu__item span svg {
+  width: 30px;
+  cursor: pointer;
+}
+
+.sun-box-icon {
+  color: var(--light-yellow);
+  filter: drop-shadow(0 0 10px var(--light-yellow));
+}
+
+.moon-box-icon {
+  color: var(--light-blue);
+  transform: rotate(-110deg);
+  filter: drop-shadow(0 0 10px var(--light-blue));
+}
+
+.hide-box {
+  display: none;
+}
