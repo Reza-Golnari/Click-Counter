@@ -63,14 +63,14 @@ let App = new Vue({
     checkRecord() {
       if (this.record < this.balance) {
         this.record = this.balance;
-        localStorage.setItem("record", this.record);
+        localStorage.setItem("record", this.balance);
       }
     },
   },
   mounted() {
     if (localStorage.getItem("theme")) {
       this.darkMode = localStorage.getItem("theme");
-      console.log(this.darkMode);
+
       if (this.darkMode == "false") {
         this.darkTheme();
       } else {
