@@ -8,6 +8,7 @@
   </head>
   <body>
     <section class="counter-box" id="app">
+      <!--------------------- Start of Navbar ---------------->
       <nav class="counter-box__navbar">
         <ul class="counter-box__navbar__menu">
           <li class="counter-box__navbar__menu__item">
@@ -51,6 +52,31 @@
           </li>
         </ul>
       </nav>
+      <!--------------------- End of Navbar ---------------->
+      <!--------------------- Start of main box ---------------->
+      <main class="counter-box__main">
+        <aside class="counter-box__main__aside">
+          <div class="counter-box__main__aside__time-box">
+            <p class="counter-box__main__aside__time-box__time">
+              Time: {{ time }}s
+            </p>
+          </div>
+          <div class="counter-box__main__aside__click-counter-box">
+            <p
+              class="counter-box__main__aside__click-counter-box__click-counter"
+            >
+              Counter: {{counter}}
+            </p>
+          </div>
+          <div class="counter-box__main__aside__click-record-box">
+            <p class="counter-box__main__aside__click-record-box__record-text">
+              Record: {{record}}
+            </p>
+          </div>
+        </aside>
+        <button class="counter-box__main__click-box">Click</button>
+      </main>
+      <!--------------------- End of main box ---------------->
     </section>
     <!---------------- Scripts ----------------->
     <script src="./js/vue.min.js"></script>

@@ -5,6 +5,7 @@ let App = new Vue({
       darkMode: false,
       time: 5,
       counter: 0,
+      record: 0,
     };
   },
   methods: {
