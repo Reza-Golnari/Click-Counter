@@ -46,6 +46,7 @@ let App = new Vue({
     end() {
       this.$refs.clickBtn.textContent = "Click To Start";
       this.balance = (+this.counter / +this.mainTime).toFixed(2);
+      this.checkRecord();
       clearInterval(this.interVal);
       this.$refs.clickBtn.classList.add("disable");
       this.$refs.resultBox.classList.add("show");
@@ -59,11 +60,10 @@ let App = new Vue({
         this.interVal = null;
       }, 5000);
     },
-  },
-  watch: {
-    darkMode() {
-      if (this.darkMode) {
-      } else {
+    checkRecord() {
+      if (this.record < this.balance) {
+        this.record = this.balance;
+        localStorage.setItem("record", this.record);
       }
     },
   },
