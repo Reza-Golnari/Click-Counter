@@ -74,9 +74,18 @@
             </p>
           </div>
         </aside>
-        <button class="counter-box__main__click-box">Click</button>
+        <button
+          class="counter-box__main__click-box"
+          @click="clickHandler"
+          ref="clickBtn"
+        >
+          Click To Start
+        </button>
       </main>
       <!--------------------- End of main box ---------------->
+      <!--------------------- Start of Result ---------------->
+      <section class="result-box" ref="resultBox"></section>
+      <!--------------------- End of Result ---------------->
     </section>
     <!---------------- Scripts ----------------->
     <script src="./js/vue.min.js"></script>

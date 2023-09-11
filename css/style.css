@@ -113,6 +113,9 @@ a {
   cursor: pointer;
   background-color: var(--light);
   color: var(--black);
+  position: relative;
+  overflow: hidden;
+  font-weight: 700;
 }
 
 .counter-box__main__aside {
@@ -150,4 +153,8 @@ a {
   background-color: var(--light-green);
   color: #2d3436;
   filter: drop-shadow(0 0 5px var(--light-green));
+}
+
+.disable {
+  pointer-events: none;
 }

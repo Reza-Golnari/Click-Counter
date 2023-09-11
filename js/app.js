@@ -6,6 +6,7 @@ let App = new Vue({
       time: 5,
       counter: 0,
       record: 0,
+      interVal: null,
     };
   },
   methods: {
@@ -18,6 +19,32 @@ let App = new Vue({
       this.$refs.lightIcon.classList.remove("hide-box");
       this.$refs.darkIcon.classList.add("hide-box");
       this.darkMode = !this.darkMode;
+    },
+    clickHandler() {
+      this.start();
+      this.counter++;
+    },
+    start() {
+      this.$refs.clickBtn.textContent = "Click";
+      if (!this.interVal) {
+        this.interVal = setInterval(() => {
+          if (this.time) {
+            this.time--;
+          } else {
+            this.end();
+          }
+        }, 1000);
+      }
+    },
+    end() {
+      this.$refs.clickBtn.textContent = "Click To Start";
+      clearInterval(this.interVal);
+      this.$refs.clickBtn.classList.add("disable");
+      this.$refs.resultBox.classList.add("show");
+      setTimeout(() => {
+        this.$refs.clickBtn.classList.remove("disable");
+        this.$refs.resultBox.classList.remove("show");
+      }, 2000);
     },
   },
   watch: {
