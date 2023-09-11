@@ -15,12 +15,16 @@ let App = new Vue({
     lightTheme() {
       this.$refs.lightIcon.classList.add("hide-box");
       this.$refs.darkIcon.classList.remove("hide-box");
-      this.darkMode = !this.darkMode;
+      this.darkMode = true;
+      document.querySelector(":root").classList.remove("dark");
+      localStorage.setItem("theme", this.darkMode);
     },
     darkTheme() {
       this.$refs.lightIcon.classList.remove("hide-box");
       this.$refs.darkIcon.classList.add("hide-box");
-      this.darkMode = !this.darkMode;
+      this.darkMode = false;
+      document.querySelector(":root").classList.add("dark");
+      localStorage.setItem("theme", this.darkMode);
     },
     clickHandler() {
       this.start();
@@ -59,10 +63,22 @@ let App = new Vue({
   watch: {
     darkMode() {
       if (this.darkMode) {
-        document.querySelector(":root").classList.add("dark");
       } else {
-        document.querySelector(":root").classList.remove("dark");
       }
     },
+  },
+  mounted() {
+    if (localStorage.getItem("theme")) {
+      this.darkMode = localStorage.getItem("theme");
+      console.log(this.darkMode);
+      if (this.darkMode == "false") {
+        this.darkTheme();
+      } else {
+        this.lightTheme();
+      }
+    }
+    if (localStorage.getItem("record")) {
+      this.record = localStorage.getItem("record");
+    }
   },
 });
