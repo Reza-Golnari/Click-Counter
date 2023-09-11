@@ -7,7 +7,7 @@
     <title>Click Counter</title>
   </head>
   <body>
-    <section class="counter-box">
+    <section class="counter-box" id="app">
       <nav class="counter-box__navbar">
         <ul class="counter-box__navbar__menu">
           <li class="counter-box__navbar__menu__item">
@@ -16,7 +16,7 @@
             >
           </li>
           <li class="counter-box__navbar__menu__item">
-            <span class="sun-box hide-box">
+            <span class="sun-box hide-box" @click="lightTheme" ref="lightIcon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -32,7 +32,7 @@
                 />
               </svg>
             </span>
-            <span class="moon-box">
+            <span class="moon-box" @click="darkTheme" ref="darkIcon">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
