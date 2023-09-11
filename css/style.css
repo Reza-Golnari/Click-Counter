@@ -202,3 +202,67 @@ a {
   pointer-events: all;
   opacity: 1;
 }
+
+@media screen and (max-width: 700px) {
+  .counter-box {
+    width: 400px;
+    height: 300px;
+  }
+  .counter-box__navbar__menu__logo {
+    font-size: 1.4rem !important;
+  }
+  .counter-box__main {
+    margin-top: 10px;
+  }
+  .counter-box__navbar__menu__item span svg {
+    width: 20px;
+  }
+  .counter-box__main__aside__time-box,
+  .counter-box__main__aside__click-counter-box,
+  .counter-box__main__aside__click-record-box {
+    font-size: 0.8rem;
+  }
+
+  .result-box {
+    width: 250px;
+    height: 70px;
+  }
+  .result-box__title {
+    font-size: 1.1rem;
+  }
+  .counter-box__main__click-box {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .counter-box {
+    width: 280px;
+    height: 90vh;
+  }
+  .counter-box__main {
+    margin-top: 30px;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+  .counter-box__main__aside {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .counter-box__main__aside__click-record-box {
+    grid-column: 1/3;
+  }
+  .counter-box__navbar__menu__item span svg {
+    width: 20px;
+  }
+  .counter-box__main__aside__time-box,
+  .counter-box__main__aside__click-counter-box,
+  .counter-box__main__aside__click-record-box {
+    width: 100%;
+    height: 100%;
+  }
+  .counter-box__main__click-box {
+    width: 100%;
+  }
+}
