@@ -7,86 +7,98 @@
     <title>Click Counter</title>
   </head>
   <body>
-    <section class="counter-box" id="app">
-      <!--------------------- Start of Navbar ---------------->
-      <nav class="counter-box__navbar">
-        <ul class="counter-box__navbar__menu">
-          <li class="counter-box__navbar__menu__item">
-            <a href="index.html" class="counter-box__navbar__menu__logo"
-              >Click Counter</a
-            >
-          </li>
-          <li class="counter-box__navbar__menu__item">
-            <span class="sun-box hide-box" @click="lightTheme" ref="lightIcon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6 sun-box-icon"
+    <div class="container" id="app">
+      <section class="counter-box" ref="counterBox">
+        <!--------------------- Start of Navbar ---------------->
+        <nav class="counter-box__navbar">
+          <ul class="counter-box__navbar__menu">
+            <li class="counter-box__navbar__menu__item">
+              <a href="index.html" class="counter-box__navbar__menu__logo"
+                >Click Counter</a
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-                />
-              </svg>
-            </span>
-            <span class="moon-box" @click="darkTheme" ref="darkIcon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="w-6 h-6 moon-box-icon"
+            </li>
+            <li class="counter-box__navbar__menu__item">
+              <span
+                class="sun-box hide-box"
+                @click="lightTheme"
+                ref="lightIcon"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
-                />
-              </svg>
-            </span>
-          </li>
-        </ul>
-      </nav>
-      <!--------------------- End of Navbar ---------------->
-      <!--------------------- Start of main box ---------------->
-      <main class="counter-box__main">
-        <aside class="counter-box__main__aside">
-          <div class="counter-box__main__aside__time-box">
-            <p class="counter-box__main__aside__time-box__time">
-              Time: {{ time }}s
-            </p>
-          </div>
-          <div class="counter-box__main__aside__click-counter-box">
-            <p
-              class="counter-box__main__aside__click-counter-box__click-counter"
-            >
-              Counter: {{counter}}
-            </p>
-          </div>
-          <div class="counter-box__main__aside__click-record-box">
-            <p class="counter-box__main__aside__click-record-box__record-text">
-              Record: {{record}}
-            </p>
-          </div>
-        </aside>
-        <button
-          class="counter-box__main__click-box"
-          @click="clickHandler"
-          ref="clickBtn"
-        >
-          Click To Start
-        </button>
-      </main>
-      <!--------------------- End of main box ---------------->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 sun-box-icon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                  />
+                </svg>
+              </span>
+              <span class="moon-box" @click="darkTheme" ref="darkIcon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 moon-box-icon"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+                  />
+                </svg>
+              </span>
+            </li>
+          </ul>
+        </nav>
+        <!--------------------- End of Navbar ---------------->
+        <!--------------------- Start of main box ---------------->
+        <main class="counter-box__main">
+          <aside class="counter-box__main__aside">
+            <div class="counter-box__main__aside__time-box">
+              <p class="counter-box__main__aside__time-box__time">
+                Time: {{ time }}s
+              </p>
+            </div>
+            <div class="counter-box__main__aside__click-counter-box">
+              <p
+                class="counter-box__main__aside__click-counter-box__click-counter"
+              >
+                Counter: {{counter}}
+              </p>
+            </div>
+            <div class="counter-box__main__aside__click-record-box">
+              <p
+                class="counter-box__main__aside__click-record-box__record-text"
+              >
+                Record: {{record}}
+              </p>
+            </div>
+          </aside>
+          <button
+            class="counter-box__main__click-box"
+            @click="clickHandler"
+            ref="clickBtn"
+          >
+            Click To Start
+          </button>
+        </main>
+        <!--------------------- End of main box ---------------->
+      </section>
       <!--------------------- Start of Result ---------------->
-      <section class="result-box" ref="resultBox"></section>
+      <section class="result-box" ref="resultBox">
+        <h2 class="result-box__title">
+          Your Balance: <span>{{balance}}</span>
+        </h2>
+      </section>
       <!--------------------- End of Result ---------------->
-    </section>
+    </div>
     <!---------------- Scripts ----------------->
     <script src="./js/vue.min.js"></script>
     <script src="./js/app.js"></script>

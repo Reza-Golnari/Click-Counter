@@ -42,6 +42,10 @@ a {
   text-decoration: none;
 }
 
+.container {
+  position: relative;
+}
+
 .counter-box {
   width: 600px;
   height: 400px;
@@ -157,4 +161,44 @@ a {
 
 .disable {
   pointer-events: none;
+}
+
+.blur {
+  filter: blur(2px);
+}
+
+.result-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 150px;
+  background-color: var(--white);
+  z-index: 9999999999;
+  border: 2px solid var(--light-blue);
+  border-radius: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s;
+}
+
+.result-box__title {
+  font-size: 2rem;
+  letter-spacing: 5px;
+  color: var(--black);
+}
+
+.result-box__title span {
+  letter-spacing: normal;
+  color: var(--light-red);
+}
+
+.show {
+  pointer-events: all;
+  opacity: 1;
 }
